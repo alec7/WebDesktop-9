@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Desktop</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--favicons-->
+<link rel="shortcut icon" href="./html/img/icon-pinterest.png" />
+<!-- Bootstrap -->
+<link href="./html/css/bootstrap.css" rel="stylesheet" media="screen" />
+<link href="./html/css/style.css" rel="stylesheet" media="screen" />
+<link href="./html/css/bootstrap-responsive.css" rel="stylesheet" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="./html/js/html5shiv.js"></script>
+    <![endif]-->
+<style>
+@font-face {
+	font-family: 'JournalRegular';
+	src: url('./html/fonts/journal-webfont.eot');
+	src: url('./html/fonts/journal-webfont_162a16fe.eot') format('embedded-opentype'), url('./html/fonts/journal-webfont.woff') format('woff'), url('./html/fonts/journal-webfont.ttf') format('truetype'), url('./html/fonts/journal-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Original URL: http://freshcreations.nl/themeforest/count/
+Date Downloaded: 4/19/2013 3:42:35 PM !-->
+</head>
+<body class="page-bg">
+<div class="container">
+  <div class="hero-unit">
+    <h1> </h1>
+  </div>
+  <div class="social-links">
+    <div class="span9">
+      <ul id="social-icons">
+        <li class="facebook"><a href="javascript:void();" onclick="fdc('Baidu',getcontent('http://www.baidu.com/home/page/show/classic',0),GetColor());" data-toggle="tooltip" title="FACEBOOK">Facebook</a></li>
+        <li class="twitter"><a href="javascript:void();" onclick="fdc('facebook','facebook','black');" data-toggle="tooltip" title="TWITTER">Twitter</a></li>
+        <li class="flickr"><a href="javascript:void();" onclick="fdc('WMS',getcontent('http://955.cc/puhV',0),'black');" data-toggle="tooltip" title="FLICKR">Flickr</a></li>
+        <li class="pinterest"><a href="javascript:void();" onclick="fdc('Pinterest',getcontent('wby_run.php?check=1','content'),'black');" data-toggle="tooltip" title="PINTEREST">Pinterest</a></li>
+        <li class="dribble"><a href="javascript:void();" onclick="fdc('Fortrabbit',getcontent('http://955.cc/pujb',0),'black');" data-toggle="tooltip" title="DRIBBLE">Dribble</a></li>
+        <li class="gplus"><a href="javascript:void();" onclick="fdc('facebook','facebook','black');" data-toggle="tooltip" title="GOOGLE PLUS">gplus</a></li>
+        <li class="instagram"><a href="javascript:void();" onclick="fdc('360',getcontent('http://so.360.cn/',0),GetColor());" data-toggle="tooltip" title="INSTAGRAM">instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="clock">
+    <div class="span6"> <img class="img-clock" src="./html/img/bg-clock.png" alt="clock counter" />
+      <div align="center" id="countdown">
+        <div class="hours"><span id="hours"></span> <ins>/</ins> <em>hours /</em></div>
+        <div class="minutes"><span id="minutes"></span> <ins>/</ins> <em>min /</em></div>
+        <div class="seconds"><span id="seconds"></span><em>sec</em> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="subscribe" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+  <div class="modal-body">
+    <div class="form-container">
+      <form class="form-horizontal" />
+        <h2>Fill in your 
+          email address 
+          &amp; we'll let you know when we launch!</h2>
+        <div class="control-group">
+          <div class="controls">
+            <input type="text" id="inputName" value="Name" onfocus="if(this.value==this.defaultValue) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" />
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <input type="text" id="inputEmail" value="Email" onfocus="if(this.value==this.defaultValue) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" />
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn">NOTIFY ME</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="map_canvas" style="width: 100%; height: 262px;"></div>
+  </div>
+</div>
+
+<!--//浮动层-->
+<style>
+            .section {
+                display: none;
+                width: 100%;
+                height: 100%;
+                position:fixed;
+                top: 0px;
+                left: 0px;
+                background: rgba(0, 0, 0, 0.7);
+            }
+           
+            .section > .section-main > .section-main-back {
+                float: left;
+            }
+            .section > .section-main > .section-main-back > a:hover > circle {
+                fill-opacity: 0.3;
+            }
+            .section > .section-main > .section-main-back > a:active > circle {
+                fill-opacity: 1;
+            }
+           
+            section > .section-main > .section-main-title {
+                display: inline-block;
+                height: 60px;
+                margin: 0px 0px 0px 10px;
+                font-size: 35px;
+                line-height: 60px;
+                color: rgba(255, 255, 255, 1);
+                text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+            }
+
+#emotion{margin:5px 0;}input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder{color:transparent;}::-webkit-scrollbar-track-piece{background:#FFF;}::-webkit-scrollbar{width:3px;height:3px;}::-webkit-scrollbar-thumb{height:50px;background-color:#999;border:none;}::-webkit-scrollbar-thumb:hover{background-color:#666;}.readmore{display:none}
+</style>
+        <section class="section" id="sale">
+            <div class="section-main" style="width: 50%;height: 100%;padding: 20px;margin: 0px 25%;background: rgba(0, 0, 0, 1);">
+                <svg class="section-main-back" width="60" height="60">
+                    <a xlink:href="javascript:void();" onclick="document.getElementById('sale').style.display='none';">
+                        <circle r="28.5" cx="30" cy="30" fill="rgba(255, 255, 255, 1)" fill-opacity="0" stroke-width="3" stroke="rgba(255, 255, 255, 1)"></circle>
+                        <path fill="rgba(255, 255, 255, 1)" transform="rotate(180 28.7798 29.65)" d="m27.07182,39.32462l5.95567,-5.97537l-11.51375,0l-11.51374,0l0,-3.69902l0,-3.69901l11.38121,0c6.26014,0 11.3824,-0.18806 11.3824,-0.41671c0,-0.22925 -2.49307,-2.91813 -5.53897,-5.97602l-5.53777,-5.5585l5.11869,0l5.11867,0l7.81832,7.83249l7.81712,7.83267l-7.83264,7.81712l-7.83265,7.81771l-5.38852,0l-5.38853,0l5.95448,-5.97537l0,0z"></path>
+                    </a>
+                </svg>
+                <h1 id="section-main-title"></h1>
+				<br/>
+				<div id="content" style="height:80%"></div>
+            </div>
+        </section>
+<script>
+function fdc(title,content,color){
+document.getElementById('sale').style.display='block';
+document.getElementById('section-main-title').innerHTML='&nbsp;'+title;
+document.getElementById('content').innerHTML=content;
+document.getElementsByClassName('section-main')[0].style.background=color;
+}
+function GetColor()
+{
+var r = Math.floor(Math.random() * 255).toString(16);
+var g = Math.floor(Math.random() * 255).toString(16);
+var b = Math.floor(Math.random() * 255).toString(16);
+r = r.length == 1 ? "0" + r : r;
+g = g.length == 1 ? "0" + g : g;
+b = b.length == 1 ? "0" + b : b;
+return "#" + r + g + b;
+}
+function getcontent(url,type){
+if(type==0){
+return '<iframe frameborder=\'0\' scrolling=\'auto\' width=\'100%\' height=\'100%\' src=\''+url+'\'></iframe>';
+}else{
+$.ajax({
+		url: url,
+		data: "",
+		type: "GET",
+		success: function( response ){
+		if(type=='1'){
+		gss();
+		}else{
+		if(type){
+		document.getElementById(type).innerHTML=response;
+		}
+		}
+		},
+		error: function(){
+		if(type){
+		document.getElementById(type).innerHTML='Failured! <a href="javascript:void" onclick="getcontent(\''+url+'\',\''+type+'\');">Try Again</a>';
+		}
+		}
+	});
+return 'Loading...';
+}
+
+}
+function gss(){
+alert('已经更新Sid!');
+getcontent('wby_run.php?check=1','content');
+}
+</script>		
+<!--//浮动层-->
+
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="./html/js/jquery.js"></script>
+<script src="./html/js/bootstrap-transition.js"></script> 
+<script src="./html/js/bootstrap-modal.js"></script> 
+<script src="./html/js/bootstrap-tooltip.js"></script> 
+<script type="text/javascript" src="./html/js/jquery.countdown.min.js"></script> 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript" src="./html/js/jquery.ui.map.min.js"></script> 
+<script type="text/javascript" src="./html/js/jquery.custom.js"></script>
+</body>
+</html>
